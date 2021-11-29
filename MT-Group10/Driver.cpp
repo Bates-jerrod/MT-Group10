@@ -61,6 +61,7 @@ int main()
 				cout << "1. Login\n2. Create Account\n3. Exit\n";
 				cin >> select;
 
+<<<<<<< Updated upstream
 				if (select == 1)
 				{
 					//ask for username and password and checks user.csv for a match
@@ -87,6 +88,35 @@ int main()
 				{
 					validSelection = false;
 					cout << "\nInvalid selection. Please try again.\n\n";
+=======
+					case 2: //Create Account
+					{
+						//asks for user information and adds to user.csv
+						cout << "Enter a Username: ";
+						getline(cin, name);
+						cout << "Enter a password: ";
+						getline(cin, password);
+						cout << "Enter your address: ";
+						getline(cin, addr);
+						cout << "Enter your card number: ";
+						getline(cin, payInfo);
+						
+						//create the account
+						curUser->createUser(name,password,addr,payInfo); 
+						login = true;
+						validSelection = true;
+						cout << "\nSuccessfully created account! ";
+						break;
+					}
+					case 3: //Exit
+						//exit program
+						validSelection = true;
+						return 0;
+					default:
+						validSelection = false;
+						cout << "\nInvalid selection. Please try again.\n\n";
+					
+>>>>>>> Stashed changes
 				}
 			}
 		}
